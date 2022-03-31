@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_welcome"
+    tools:context=".Welcome">
+
+    <Button
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="290dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/custom_button"
+        android:text="Skip"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/welcom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="150dp"
+        android:text="Welcome to"
+        android:textColor="#000000"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/foodhub"
+        android:layout_width="wrap_content"
+        android:layout_height="71dp"
+        android:layout_below="@+id/welcom"
+        android:layout_marginLeft="25dp"
+        android:text="FoodHub"
+        android:textColor="#fe724c"
+        android:textSize="45sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/comment"
+        android:layout_below="@+id/foodhub"
+        android:layout_marginLeft="25dp"
+        android:text="Your favourite foods delivered fast at your door."
+        android:textColor="#30384f"
+        android:textSize="15sp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signinwith"
+        android:layout_below="@+id/comment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="sign in with"
+        android:textColor="#ffffffff"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_marginLeft="50dp"
+        android:layout_toLeftOf="@+id/signinwith"
+        android:layout_marginTop="110dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/comment"/>
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:layout_marginRight="50dp"
+        android:layout_toRightOf="@+id/signinwith"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/comment"/>
+
+
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signinwith"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="79dp"
+        android:background="@drawable/facebook1" />
+
+    <ImageButton
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signinwith"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginRight="34dp"
+        android:layout_toRightOf="@+id/button"
+        android:background="@drawable/google1" />
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/ic_rectangle_4148"
+        android:text="Start with email or phone"
+        android:textColor="#ffffff" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/have_acc"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:text="Already have an account?"
+        android:textColor="#ffffff"
+        android:layout_below="@id/button3"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        />
+
+    <Button
+        android:id="@+id/signin"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="50dp"
+        android:layout_toRightOf="@id/have_acc"
+        android:text="Sign in"
+        android:textColor="#ffffff"
+        android:textSize="15dp" />
+
+</RelativeLayout>
