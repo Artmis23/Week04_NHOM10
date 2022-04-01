@@ -52,22 +52,17 @@ class SignUp : AppCompatActivity() {
                 binding.edtEmail.error = "Field is required"
                 view = binding.edtEmail
             }
-
-            when {
-                fullname.isEmpty() -> {
-                    binding.edtFullName.error = "Field is required"
-                    view = binding.edtFullName
-                }
-
-                email.isEmpty() -> {
-                    binding.edtEmail.error = "Field is required"
-                    view = binding.edtEmail
-                }
-                password.isEmpty() -> {
-                    binding.edtPassWord.error = "Field is required"
-                    view = binding.edtPassWord
-                }
-
+            if (fullname.isEmpty()) {
+                binding.edtFullName.error = "Field is required"
+                view = binding.edtFullName
+            }
+            if (email.isEmpty()) {
+                binding.edtEmail.error = "Field is required"
+                view = binding.edtEmail
+            }
+            if (password.isEmpty()) {
+                binding.edtPassWord.error = "Field is required"
+                view = binding.edtPassWord
             }
 
             mainViewModel.registerUser(email, password, fullname)
