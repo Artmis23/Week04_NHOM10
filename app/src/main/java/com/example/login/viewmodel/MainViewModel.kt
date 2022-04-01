@@ -67,12 +67,12 @@ class MainViewModel : ViewModel() {
 
 
     private fun isEmailValid(emailFun: String): Boolean {
-        return !TextUtils.isEmpty(emailFun) &&
-                android.util.Patterns.EMAIL_ADDRESS.matcher(emailFun).matches()
+        return !TextUtils.isEmpty(emailFun)
+                && android.util.Patterns.EMAIL_ADDRESS.matcher(emailFun).matches()
     }
 
     private fun isPasswordValid(passWordFun: String): Boolean {
-        return !TextUtils.isEmpty(passWordFun) && passWordFun.length in 8..10
+        return !TextUtils.isEmpty(passWordFun) && passWordFun.length in 8..20
     }
 
     private fun isFullnameValid(fullNameFun: String): Boolean {

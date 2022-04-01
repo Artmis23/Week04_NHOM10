@@ -42,31 +42,29 @@ class SignUp : AppCompatActivity() {
             val email = binding.edtEmail.text.toString().trim()
             val password = binding.edtPassWord.text.toString().trim()
             val fullname = binding.edtFullName.text.toString().trim()
-            var view : View? = null
+            var view: View? = null
+
+            if (password.length < 8) {
+                binding.edtPassWord.error = "Field is required minimum is 8"
+                view = binding.edtPassWord
+            }
+            if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.edtEmail.error = "Field is required"
+                view = binding.edtEmail
+            }
 
             when {
-                fullname.isEmpty() ->
-                {
+                fullname.isEmpty() -> {
                     binding.edtFullName.error = "Field is required"
                     view = binding.edtFullName
                 }
-                email.isEmpty() ->
-                {
+
+                email.isEmpty() -> {
                     binding.edtEmail.error = "Field is required"
                     view = binding.edtEmail
                 }
-                password.isEmpty() ->
-                {
+                password.isEmpty() -> {
                     binding.edtPassWord.error = "Field is required"
-                    view = binding.edtPassWord
-                }
-                Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
-                    binding.edtEmail.error = "Field is required"
-                    view = binding.edtEmail
-                }
-                password.length < 9 ->
-                {
-                    binding.edtPassWord.error = "Field is required minimum is 8"
                     view = binding.edtPassWord
                 }
 
