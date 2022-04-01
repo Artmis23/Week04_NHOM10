@@ -72,7 +72,7 @@ class MainViewModel : ViewModel() {
     }
 
     private fun isPasswordValid(passWordFun: String): Boolean {
-        return passWordFun.length in 7..10
+        return !TextUtils.isEmpty(passWordFun) && passWordFun.length in 8..10
     }
 
     private fun isFullnameValid(fullNameFun: String): Boolean {
