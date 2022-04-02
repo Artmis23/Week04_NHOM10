@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.example.login.databinding.ActivitySignupBinding
 import com.example.login.viewmodel.MainViewModel
+import java.util.regex.Pattern
 
 
 class SignUp : AppCompatActivity() {
@@ -29,6 +30,20 @@ class SignUp : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        fun PasswordValidation(password: String): Boolean {
+            return if (password.length >= 8) {
+                val letter = Pattern.compile("[a-zA-z]")
+                val digit = Pattern.compile("[0-9]")
+                val special = Pattern.compile("[!@#$%&*()_+=|<>?{}\\[\\]~-]")
+                //Pattern eight = Pattern.compile (".{8}");
+                val hasLetter = letter.matcher(password)
+                val hasDigit = digit.matcher(password)
+                val hasSpecial = special.matcher(password)
+                hasLetter.find() && hasDigit.find() && hasSpecial.find()
+            } else false
+        }
+
         binding = DataBindingUtil.setContentView(this, R.layout.activity_signup)
 
 //        edtFullName = findViewById<View>(R.id.edtFullName) as EditText
@@ -63,6 +78,11 @@ class SignUp : AppCompatActivity() {
             if (password.isEmpty()) {
                 binding.edtPassWord.error = "Field is required"
                 view = binding.edtPassWord
+            }
+            if (!PasswordValidation(password)) {
+                binding.edtPassWord.error = "Field is required minimum is 8 and all charecters have @#! 1-8 a-Z"
+                view = binding.edtPassWord
+                return@OnClickListener;
             }
 
             mainViewModel.registerUser(email, password, fullname)
