@@ -64,7 +64,7 @@ class SignUp : AppCompatActivity() {
                 view = binding.edtPassWord
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-                binding.edtEmail.error = "Field is required"
+                binding.edtEmail.error = "Invalid email"
                 view = binding.edtEmail
             }
             if (fullname.isEmpty()) {
@@ -80,7 +80,7 @@ class SignUp : AppCompatActivity() {
                 view = binding.edtPassWord
             }
             if (!PasswordValidation(password)) {
-                binding.edtPassWord.error = "Field is required minimum is 8 and all charecters have @#! 1-8 a-Z"
+                binding.edtPassWord.error = "Field is required must minimum is 8 characters, include uppercase, lowercase letters, numbers 1-9 and must special character ! @ # $ % ^ & *!"
                 view = binding.edtPassWord
                 return@OnClickListener;
             }
